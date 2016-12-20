@@ -9,32 +9,28 @@ namespace ClassLibrary1
   
   public  class InductResCalc : MathCount
     {
-     private double _inductanceValue; 
-     private double _frequencyValue;
-   
-             
-      
-            public InductResCalc( double InductionIn, double FrequencyIn )
-            {
-            _inductanceValue=InductionIn;
-            _frequencyValue=FrequencyIn;
-            }
+    private double _inductanceValue; 
+    private double _frequencyValue;
+  
+    /// <summary>
+    /// конструктор для реализации метода индуктивности 
+    /// </summary>
+    /// <param name="InductionIn"></param>
+    /// <param name="FrequencyIn"></param>
+    public InductResCalc( double InductionIn, double FrequencyIn )
+     {
+         _inductanceValue=InductionIn;
+         _frequencyValue=FrequencyIn;
+      }
 
-            
-     
-
-        //методы        
-        public double Calculation
-        {
+        //метод расчёта сопротивления катушки индуктивности       
+        public double ResistanceCalculation
+         {
             get
             {
-
                 return (2 * System.Math.PI * _frequencyValue * _inductanceValue);
             }
-        }
-        
-
-        }
-
+         }
+       }
 }
 

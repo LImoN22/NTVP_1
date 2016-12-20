@@ -8,7 +8,7 @@ namespace ClassLibrary1
 {
      public interface MathCount
     {
-         double Calculation
+         double ResistanceCalculation
          {
             get;
          }

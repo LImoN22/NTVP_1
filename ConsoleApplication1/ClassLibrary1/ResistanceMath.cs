@@ -11,17 +11,20 @@ namespace ClassLibrary1
           private double _resistanceValue; 
     
   
-      
-            public ResistanceResCalc(double ResistanceIn)
-            {
-            _resistanceValue = ResistanceIn;
-            }
+      /// <summary>
+      /// Конструктор для реализации метода расчёта сопротивления резистора 
+      /// </summary>
+      /// <param name="ResistanceIn"></param>
+      public ResistanceResCalc(double ResistanceIn)
+        {
+         _resistanceValue = ResistanceIn;
+        }
 
             
      
 
-        //методы        
-        public double Calculation
+        //метод расчёта сопротивления резистора       
+            public double ResistanceCalculation
         {
             get
             {
@@ -29,9 +32,6 @@ namespace ClassLibrary1
                 return (_resistanceValue);
             }
         }
-        
-
-        }
-
+      }
     }
 

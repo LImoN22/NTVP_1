@@ -12,14 +12,20 @@ namespace ClassLibrary1
         private double _frequencyValue;
 
 
-
+       /// <summary>
+        /// Конструктор для реализации метода расчёта сопротивления катушки индуктивности 
+       /// </summary>
+       /// <param name="CapacityIn"></param>
+       /// <param name="FrequencyIn"></param>
         public CapacityResCalc(double CapacityIn, double FrequencyIn)
         {
             _capacityValue = CapacityIn;
             _frequencyValue = FrequencyIn;
 
         }
-        public double Calculation
+
+        //метод расчёта сопротивления конденсатора 
+        public double ResistanceCalculation
         {
             get
             {
