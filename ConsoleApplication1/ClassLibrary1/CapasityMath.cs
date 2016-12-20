@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class CapacityMath : MathCount
+    public class CapacityResCalc : MathCount
     {
         private double _capacityValue;
         private double _frequencyValue;
 
 
 
-        public CapacityMath(double CapacityIn, double FrequencyIn)
+        public CapacityResCalc(double CapacityIn, double FrequencyIn)
         {
             _capacityValue = CapacityIn;
             _frequencyValue = FrequencyIn;

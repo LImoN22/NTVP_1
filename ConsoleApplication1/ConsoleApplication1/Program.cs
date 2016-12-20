@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using ClassLibrary1;
 using System.ComponentModel.DataAnnotations;
 
-
 namespace ConsoleApplication1
 {
    /* public class InnerValidation
@@ -32,10 +31,12 @@ namespace ConsoleApplication1
             double InductionCheckResult;
             InductionCheckResult = 0; 
            double CapacityCheckResult;
-           CapacityCheckResult = 0; 
+           CapacityCheckResult = 0;
+           double ResistanceCheckResult;
+           ResistanceCheckResult = 0;
            
   
-   
+   //менюшка
             //for (; ; )
             //{
             int i;
@@ -54,12 +55,19 @@ namespace ConsoleApplication1
 
                     Console.WriteLine("\n");
 
+
+
+
                     switch (i)
                     {
 
+
+
+
+
                             // расчёт катушки
           case 1:
-                            
+                         // ввод частоты   
                             bool result_f = false;
                              while (!result_f)
                              {
@@ -94,7 +102,7 @@ namespace ConsoleApplication1
                                  }
                              }
                               
-                           
+                           // Ввод индуктивности
                              bool result_l = false;
                              while (!result_l)
                              {
@@ -159,7 +167,7 @@ namespace ConsoleApplication1
                              bool result_c = false;
                              while (!result_c)
                              {
-                                 Console.WriteLine("Введите C (мкГн) :\n");
+                                 Console.WriteLine("Введите C (мкФ) :\n");
                                  string CapacityValue = Console.ReadLine();
                                  result_c = double.TryParse(CapacityValue, out CapacityCheckResult);
                                  if (result_c)
@@ -175,18 +183,40 @@ namespace ConsoleApplication1
                                  }
                              }
 
-                             CapacityMath Object_CapacityResCalc = new CapacityMath(FrequencyCheckResult, CapacityCheckResult);
+                             CapacityResCalc Object_CapacityResCalc = new CapacityResCalc(FrequencyCheckResult, CapacityCheckResult);
             Console.WriteLine("Ёмкостное сопротивление = {0}", Object_CapacityResCalc.Calculation);
             break;
-                          
+                 
+                        
+                        
+                        
+                        // расчёт сопротивления
+                     
                         case 3:
-                            Console.WriteLine("The for:\n");
-                            Console.Write("for(init; condition; iteration)");
-                            Console.WriteLine(" statement;");
-                            break;
-                        default:
-                            Console.WriteLine("shiiiiet happens");
-                            break;
+            bool result_r = false; 
+            while (!result_r)
+            {
+                Console.WriteLine("Введите R (Oм):\n");
+                string ResistanceValue = Console.ReadLine();
+                result_r = double.TryParse(ResistanceValue, out ResistanceCheckResult);
+
+                if (result_r)
+                {
+
+                    Console.WriteLine("Converted '{0}' to {1}.", ResistanceValue, ResistanceCheckResult);
+                }
+                else
+                {
+
+                    Console.WriteLine("Attempted ->'{0}' failed.",
+                   ResistanceValue == null ? "<null>" : ResistanceValue);
+                }
+            }
+
+            ResistanceResCalc Object_ResistanceResCalc = new ResistanceResCalc(ResistanceCheckResult);
+            Console.WriteLine("Резистивность = {0}", Object_ResistanceResCalc.Calculation);
+            break;
+                          
                     }
                     Console.Write("\n\n\t\t\tНажмите любую клавишу...\n");
                     Console.ReadLine();

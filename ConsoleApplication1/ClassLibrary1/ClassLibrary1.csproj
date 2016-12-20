@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CapasityMath.cs" />
+    <Compile Include="ResistanceMath.cs" />
     <Compile Include="Interface1.cs" />
     <Compile Include="InductionMath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
