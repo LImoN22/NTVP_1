@@ -19,10 +19,6 @@ namespace ClassLibrary1
         {
          _resistanceValue = ResistanceIn;
         }
-
-            
-     
-
         //метод расчёта сопротивления резистора       
             public double ResistanceCalculation
         {
