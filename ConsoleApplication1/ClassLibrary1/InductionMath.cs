@@ -31,6 +31,13 @@ namespace ClassLibrary1
                 return (2 * System.Math.PI * _frequencyValue * _inductanceValue);
             }
          }
+      public string ElementType
+        {
+          get
+            {
+                return "Coil Induction";
+            }
+        }
        }
 }
 

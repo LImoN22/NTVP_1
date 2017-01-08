@@ -27,7 +27,15 @@ namespace ClassLibrary1
 
                 return (_resistanceValue);
             }
+
         }
-      }
-    }
+            public string ElementType
+        {
+            get
+            {
+                return "Resistor";
+            }
+        }
+     }
+  }
 

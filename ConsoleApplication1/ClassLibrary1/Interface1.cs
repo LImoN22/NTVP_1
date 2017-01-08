@@ -12,6 +12,9 @@ namespace ClassLibrary1
          {
             get;
          }
-         
+         string ElementType
+         {
+             get;
+         }
     }
 }

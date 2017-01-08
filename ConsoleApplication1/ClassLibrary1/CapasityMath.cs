@@ -32,5 +32,12 @@ namespace ClassLibrary1
                 return (1/(2 * System.Math.PI * _frequencyValue * _capacityValue));
             }
         }
+        public string ElementType
+        {
+            get
+            {
+                return "Capasitor resistance";
+            }
+        }
     }   
 }
