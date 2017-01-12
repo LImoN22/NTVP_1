@@ -1,0 +1,8 @@
+E:\STUD\НТВП\GITLABS\NTVP_1\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+E:\STUD\НТВП\GITLABS\NTVP_1\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+E:\STUD\НТВП\GITLABS\NTVP_1\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+E:\STUD\НТВП\GITLABS\NTVP_1\ConsoleApplication1\ConsoleApplication1\bin\Debug\ClassLibrary1.dll
+E:\STUD\НТВП\GITLABS\NTVP_1\ConsoleApplication1\ConsoleApplication1\bin\Debug\ClassLibrary1.pdb
+E:\STUD\НТВП\GITLABS\NTVP_1\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+E:\STUD\НТВП\GITLABS\NTVP_1\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+E:\STUD\НТВП\GITLABS\NTVP_1\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
