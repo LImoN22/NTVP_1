@@ -17,13 +17,20 @@ namespace ClassLibrary1
        /// </summary>
        /// <param name="CapacityIn"></param>
        /// <param name="FrequencyIn"></param>
-        public CapacityResCalc(double CapacityIn, double FrequencyIn)
+       public CapacityResCalc(double CapacityIn, double FrequencyIn)
         {
             _capacityValue = CapacityIn;
             _frequencyValue = FrequencyIn;
 
         }
 
+        
+/*        public CapacityResCalc()
+        {
+
+            // TODO: Complete member initialization
+        }
+        */
         //метод расчёта сопротивления конденсатора 
         public double ResistanceCalculation
         {
@@ -37,6 +44,14 @@ namespace ClassLibrary1
             get
             {
                 return "Capasitor resistance";
+            }
+        }
+        public double[] Parametr
+        {
+            get
+            {
+                double[] p = { Math.Round(_capacityValue, 3), Math.Round(_frequencyValue, 3) };
+                return p;
             }
         }
     }   

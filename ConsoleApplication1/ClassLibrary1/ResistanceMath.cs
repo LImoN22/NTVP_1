@@ -36,6 +36,14 @@ namespace ClassLibrary1
                 return "Resistor";
             }
         }
+            public double[] Parametr
+            {
+                get
+                {
+                    double[] p = { Math.Round(_resistanceValue, 3) };
+                    return p;
+                }
+            }
      }
   }
 

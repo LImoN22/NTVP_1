@@ -38,6 +38,14 @@ namespace ClassLibrary1
                 return "Coil Induction";
             }
         }
+      public double[] Parametr
+      {
+          get
+          {
+              double[] p = { Math.Round(_inductanceValue, 3), Math.Round(_frequencyValue, 3) };
+              return p;
+          }
+      }
        }
 }
 

@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddElementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddElementForm.Designer.cs">
+      <DependentUpon>AddElementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateInnerForms.cs" />
     <Compile Include="ResistanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddElementForm.resx">
+      <DependentUpon>AddElementForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ResistanceForm.resx">
       <DependentUpon>ResistanceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -64,6 +75,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\ClassLibrary1.CapacityResCalc.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary1.InductResCalc.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary1.ResistanceResCalc.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,6 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\Model.csproj">
+      <Project>{b7be2e05-30f7-4b83-a5b1-d40522b12665}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

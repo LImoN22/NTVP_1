@@ -16,5 +16,10 @@ namespace ClassLibrary1
          {
              get;
          }
+
+         double[] Parametr
+         {
+             get;
+         }
     }
 }
