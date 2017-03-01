@@ -22,14 +22,16 @@ namespace WindowsFormsApplication1
       /// <param name="control"></param>
       /// <param name="enabledTextBox"></param>
       /// <returns></returns>
-      private TextBox CreatingTextBox(string name, int locationX, int locationY, bool enabledTextBox)
+      private static TextBox CreatingTextBox(string name, int locationX, int locationY, bool enabledTextBox)
       {
-          TextBox textBox = new TextBox();
-          textBox.Name = name;
-          textBox.Location = new System.Drawing.Point(locationX, locationY);
-          textBox.Size = new System.Drawing.Size(100, 20);
-          textBox.Visible = true;
-          textBox.Enabled = enabledTextBox;
+          var textBox = new TextBox
+          {
+              Name = name,
+              Location = new System.Drawing.Point(locationX, locationY),
+              Size = new System.Drawing.Size(100, 20),
+              Visible = true,
+              Enabled = enabledTextBox
+          };
           //не обязательно передавать в обычнх контрол можно сразу передедать через groupBox
           //control[0].Add(textBox);
          // TextBoxList.Add(textBox);
