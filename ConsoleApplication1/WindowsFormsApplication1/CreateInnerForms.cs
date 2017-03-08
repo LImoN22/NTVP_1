@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,13 @@ namespace WindowsFormsApplication1
   
   public  class CreateInnerForms
     {
-      private BindingList<TextBox> TextBoxList = new BindingList<TextBox>(); 
-      /// <summary>
+        private BindingList<Control.ControlCollection> _textBoxAmount;
+        public CreateInnerForms(BindingList<Control.ControlCollection> textBoxAmount)
+        {
+            _textBoxAmount = textBoxAmount;
+        }
+
+            /// <summary>
       /// Текст бокс возвращает Controls 
       /// </summary>
       /// <param name="name"></param>
@@ -22,37 +28,49 @@ namespace WindowsFormsApplication1
       /// <param name="control"></param>
       /// <param name="enabledTextBox"></param>
       /// <returns></returns>
-      private static TextBox CreatingTextBox(string name, int locationX, int locationY, bool enabledTextBox)
+      public BindingList<TextBox> CreatingTextBox(List<string> listName, Point position)
       {
-          var textBox = new TextBox
+          var listTextBox = new BindingList<TextBox>();
+          foreach(var name in listName)
           {
-              Name = name,
+
+              listTextBox.Add(CreateTextBox(name, position));
+              //pothition.X += 20;
+              position.Y += 40;
+
+             /* Name = name,
               Location = new System.Drawing.Point(locationX, locationY),
               Size = new System.Drawing.Size(100, 20),
               Visible = true,
               Enabled = enabledTextBox
-          };
+          */
+               };
+
           //не обязательно передавать в обычнх контрол можно сразу передедать через groupBox
           //control[0].Add(textBox);
          // TextBoxList.Add(textBox);
-          return (textBox);
+          return (listTextBox);
 
       }
       /// <summary>
       /// Конструктор для текстбоксов
       /// </summary>
-      int _textBoxAmount;
-      
-      public  CreateInnerForms(int TextBoxAmount)  
+
+      private TextBox CreateTextBox(string name, Point position)
       {
-          _textBoxAmount = TextBoxAmount; 
+          TextBox createTextBox = new TextBox();
+          createTextBox.Name = name;
+          createTextBox.Location = position;
+          _textBoxAmount[0].Add(createTextBox);
+          _textBoxAmount[1].Add(createTextBox);
+          return createTextBox;
       }
 
      
      /// <summary>
      /// Циклический метод создания текст боксов 
      /// </summary>
-      private void CycleCreationOfTextBox( ) 
+    /*  private void CycleCreationOfTextBox( ) 
       {
           
           for (int i = 0; _textBoxAmount == i; i++)
@@ -66,7 +84,7 @@ namespace WindowsFormsApplication1
           get 
           {
               CycleCreationOfTextBox ();
-              return TextBoxList; 
+              return TextBoxList;   
           }
          
       }
@@ -81,7 +99,12 @@ namespace WindowsFormsApplication1
               
           }
 
-      }
+      }*/
 
+
+   /*   internal void CreatingTextBox(List<string> name, Point p)
+      {
+          throw new NotImplementedException();
+      }*/
     }
 }
