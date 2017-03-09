@@ -14,48 +14,58 @@ namespace WindowsFormsApplication1
 {
     public partial class AddElementForm : Form
     {
-        public AddElementForm()
+      public AddElementForm()
         {
             InitializeComponent();
             listControl.Add(Controls);
             listControl.Add(groupBox1.Controls);
         }
-       private BindingList<Control.ControlCollection> listControl = new BindingList<Control.ControlCollection>();
-        private BindingList<System.Windows.Controls.TextBox> _textBoxList = new BindingList<System.Windows.Controls.TextBox>(); 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+     private BindingList<Control.ControlCollection> listControl = new BindingList<Control.ControlCollection>();
+     private BindingList<TextBox> _textBoxList = new BindingList<TextBox>();
+     private Point textBoxCoordinates = new Point(10, 68);
+     private Point labelCoordinates = new Point(10, 50);
+     private BindingList<Label> _labelList = new BindingList<Label>(); 
+
+      private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+       
+            CreateInnerForms cr = new CreateInnerForms(listControl);
             switch (comboBox1.SelectedIndex)
             {
+
                 case 0 :
                     {
-                        CreateInnerForms cr = new CreateInnerForms(listControl);
+                        cr.ClearBindingListLabel(_labelList, listControl);
+                        cr.ClearBindingListTextBox(_textBoxList, listControl);
                         List<string> name = new List<string>();
                         name.Add("one");
                         name.Add("two");
                         name.Add("three");
-                        Point p = new Point(10, 20);
-                        cr.CreatingTextBox(name, p);
-                        /*CreateInnerForms createInnerForms = new CreateInnerForms(2);
-                        _textBoxList = createInnerForms.ReturnParametr;
-                      // CapacityResCalc capasityResCalc = new CapacityResCalc(Convert.ToDouble(_textBoxList[1].Text),Convert.ToDouble(_textBoxList[2].Text));
-                        */
+                        _labelList = cr.CreatingLabel(name, labelCoordinates);
+                     _textBoxList = cr.CreatingTextBox(name, textBoxCoordinates);
                         break; 
                     }
                 case 1:
                     {
-                        CreateInnerForms cr = new CreateInnerForms(listControl);
+                        cr.ClearBindingListLabel(_labelList, listControl);
+                        cr.ClearBindingListTextBox(_textBoxList, listControl);
                         List<string> name = new List<string>();
                         name.Add("one1");
                         name.Add("two1");
                         name.Add("three1");
-                        Point p = new Point(10, 5);
-                        cr.CreatingTextBox(name, p);
+                        _labelList = cr.CreatingLabel(name, labelCoordinates);
+                       _textBoxList=cr.CreatingTextBox(name,textBoxCoordinates);
                         break; 
 
                     }
                 case 2:
                     {
+                        cr.ClearBindingListLabel(_labelList, listControl);
+                        cr.ClearBindingListTextBox(_textBoxList, listControl);
+                        List<string> name = new List<string>();
+                        name.Add("one2");
+                        _labelList = cr.CreatingLabel(name, labelCoordinates);
+                        _textBoxList = cr.CreatingTextBox(name, textBoxCoordinates);
                         break; 
                     }
                 
@@ -63,7 +73,6 @@ namespace WindowsFormsApplication1
             }
 
         }
-    
 
     }
 

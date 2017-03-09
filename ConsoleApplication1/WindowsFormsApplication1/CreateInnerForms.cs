@@ -46,15 +46,62 @@ namespace WindowsFormsApplication1
           */
                };
 
-          //не обязательно передавать в обычнх контрол можно сразу передедать через groupBox
-          //control[0].Add(textBox);
-         // TextBoxList.Add(textBox);
+     
           return (listTextBox);
 
       }
+
+      public BindingList<Label> CreatingLabel(List<string> listName, Point position)
+      {
+          var listLabel = new BindingList<Label>();
+          foreach (var name in listName)
+          {
+              listLabel.Add(CreatingLabel(name, position));
+              position.Y += 40;
+
+          };
+          return (listLabel);
+
+      }
+   /// <summary>
+   /// очистка текст боксов 
+   /// </summary>
+   /// <param name="_textBoxList"></param>
+   /// <param name="listControl"></param>
+   /// <returns></returns>
+      public BindingList<TextBox> ClearBindingListTextBox(BindingList<TextBox> _textBoxList, BindingList<Control.ControlCollection> listControl)
+      {
+          if (_textBoxList != null)
+          {
+              foreach (var t in _textBoxList)
+              {
+                  listControl[0].Remove(t);
+                  t.Dispose();
+              }
+              _textBoxList.Clear();
+          }
+          return _textBoxList;
+
+      }
       /// <summary>
-      /// Конструктор для текстбоксов
+      /// Очистка лейблов 
       /// </summary>
+      /// <param name="labelList"></param>
+      /// <param name="listControl"></param>
+      /// <returns></returns>
+     public BindingList<Label> ClearBindingListLabel(BindingList<Label> labelList, BindingList<Control.ControlCollection> listControl)
+      {
+          if (labelList != null)
+          {
+              foreach (var lable in labelList)
+              {
+                  listControl[0].Remove(lable);
+                  lable.Dispose();
+              }
+              labelList.Clear();
+          }
+          return labelList;
+      }
 
       private TextBox CreateTextBox(string name, Point position)
       {
@@ -66,45 +113,19 @@ namespace WindowsFormsApplication1
           return createTextBox;
       }
 
+      private Label CreatingLabel(string name, Point position)
+      {
+          Label creatingLabel = new Label();
+          creatingLabel.Name = "Label" + name;
+          creatingLabel.Location = position;
+          creatingLabel.Text = name;
+          creatingLabel.Height = 13; 
+          _textBoxAmount[0].Add(creatingLabel);
+          _textBoxAmount[1].Add(creatingLabel);
+          return creatingLabel;
+      }
+
      
-     /// <summary>
-     /// Циклический метод создания текст боксов 
-     /// </summary>
-    /*  private void CycleCreationOfTextBox( ) 
-      {
-          
-          for (int i = 0; _textBoxAmount == i; i++)
-          {
-              TextBoxList.Add(CreatingTextBox(i.ToString(), 20, (20 + 40 * i),true));
-          }
- 
-      }
-      public BindingList<TextBox> ReturnParametr
-      {
-          get 
-          {
-              CycleCreationOfTextBox ();
-              return TextBoxList;   
-          }
-         
-      }
-      private BindingList<Control> _bindingListControls;
-      public BindingList<Control> ReciveParametr
-      {
 
-          set
-          {
-              _bindingListControls = value; 
-
-              
-          }
-
-      }*/
-
-
-   /*   internal void CreatingTextBox(List<string> name, Point p)
-      {
-          throw new NotImplementedException();
-      }*/
     }
 }
