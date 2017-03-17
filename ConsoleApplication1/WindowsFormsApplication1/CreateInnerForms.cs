@@ -102,7 +102,12 @@ namespace WindowsFormsApplication1
           }
           return labelList;
       }
-
+      /// <summary>
+      /// метод создания текст боксов 
+      /// </summary>
+      /// <param name="name"></param>
+      /// <param name="position"></param>
+      /// <returns></returns>
       private TextBox CreateTextBox(string name, Point position)
       {
           TextBox createTextBox = new TextBox();
@@ -112,7 +117,12 @@ namespace WindowsFormsApplication1
           _textBoxAmount[1].Add(createTextBox);
           return createTextBox;
       }
-
+      /// <summary>
+      ///  метод создания лейблов
+      /// </summary>
+      /// <param name="name"></param>
+      /// <param name="position"></param>
+      /// <returns></returns>
       private Label CreatingLabel(string name, Point position)
       {
           Label creatingLabel = new Label();
