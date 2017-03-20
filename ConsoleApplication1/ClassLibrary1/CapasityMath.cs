@@ -6,23 +6,18 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class CapacityResCalc : MathCount
+    public class CapacityResCalc : IMathCount
     {
-        private double _capacityValue;
-        private double _frequencyValue;
+       public double CapacityValue;
+       public double FrequencyValue;
 
 
        /// <summary>
-        /// Конструктор для реализации метода расчёта сопротивления катушки индуктивности 
+        /// Пустой конструктор для сериализации 
        /// </summary>
        /// <param name="CapacityIn"></param>
        /// <param name="FrequencyIn"></param>
-       public CapacityResCalc(double CapacityIn, double FrequencyIn)
-        {
-            _capacityValue = CapacityIn;
-            _frequencyValue = FrequencyIn;
-
-        }
+       public CapacityResCalc() {}
 
         
 /*        public CapacityResCalc()
@@ -36,7 +31,7 @@ namespace ClassLibrary1
         {
             get
             {
-                return (1/(2 * System.Math.PI * _frequencyValue * _capacityValue));
+                return (1/(2 * System.Math.PI * FrequencyValue * CapacityValue));
             }
         }
         public string ElementType
@@ -50,7 +45,7 @@ namespace ClassLibrary1
         {
             get
             {
-                double[] p = { Math.Round(_capacityValue, 3), Math.Round(_frequencyValue, 3) };
+                double[] p = { Math.Round(CapacityValue, 3), Math.Round(FrequencyValue, 3) };
                 return p;
             }
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-     public interface MathCount
+     public interface IMathCount
     {
          double ResistanceCalculation
          {

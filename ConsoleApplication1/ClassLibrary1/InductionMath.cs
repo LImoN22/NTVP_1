@@ -7,28 +7,24 @@ using System.Threading.Tasks;
 namespace ClassLibrary1
 {
   
-  public  class InductResCalc : MathCount
+  public  class InductResCalc : IMathCount
     {
-    private double _inductanceValue; 
-    private double _frequencyValue;
+    public double InductanceValue; 
+    public double FrequencyValue;
   
     /// <summary>
-    /// конструктор для реализации метода индуктивности 
+    ///пустой конструктор для сериализации 
     /// </summary>
     /// <param name="InductionIn"></param>
     /// <param name="FrequencyIn"></param>
-    public InductResCalc( double InductionIn, double FrequencyIn )
-     {
-         _inductanceValue=InductionIn;
-         _frequencyValue=FrequencyIn;
-      }
+    public InductResCalc() {} 
 
         //метод расчёта сопротивления катушки индуктивности       
         public double ResistanceCalculation
          {
             get
             {
-                return (2 * System.Math.PI * _frequencyValue * _inductanceValue);
+                return (2 * System.Math.PI * FrequencyValue * InductanceValue);
             }
          }
       public string ElementType
@@ -42,7 +38,7 @@ namespace ClassLibrary1
       {
           get
           {
-              double[] p = { Math.Round(_inductanceValue, 3), Math.Round(_frequencyValue, 3) };
+              double[] p = { Math.Round(InductanceValue, 3), Math.Round(FrequencyValue, 3) };
               return p;
           }
       }

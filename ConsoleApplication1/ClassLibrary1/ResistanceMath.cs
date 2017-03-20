@@ -6,26 +6,24 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-  public  class ResistanceResCalc : MathCount
+  public  class ResistanceResCalc : IMathCount
     {
-          private double _resistanceValue; 
+       public double ResistanceValue; 
     
   
       /// <summary>
-      /// Конструктор для реализации метода расчёта сопротивления резистора 
+      /// Пустой конструктор для сериализации 
       /// </summary>
       /// <param name="ResistanceIn"></param>
-      public ResistanceResCalc(double ResistanceIn)
-        {
-         _resistanceValue = ResistanceIn;
-        }
+       public ResistanceResCalc() {}
+       
         //метод расчёта сопротивления резистора       
             public double ResistanceCalculation
         {
             get
             {
 
-                return (_resistanceValue);
+                return (ResistanceValue);
             }
 
         }
@@ -40,7 +38,7 @@ namespace ClassLibrary1
             {
                 get
                 {
-                    double[] p = { Math.Round(_resistanceValue, 3) };
+                    double[] p = { Math.Round(ResistanceValue, 3) };
                     return p;
                 }
             }

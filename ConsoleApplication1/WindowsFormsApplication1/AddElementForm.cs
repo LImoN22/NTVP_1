@@ -24,12 +24,14 @@ namespace WindowsFormsApplication1
      private BindingList<TextBox> _textBoxList = new BindingList<TextBox>();
      private Point textBoxCoordinates = new Point(10, 68);
      private Point labelCoordinates = new Point(10, 50);
-     private BindingList<Label> _labelList = new BindingList<Label>(); 
-
+     private BindingList<Label> _labelList = new BindingList<Label>();
+     private int _elementType;
+     private IMathCount _iMathCount = null; 
       private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
        
             CreateInnerForms cr = new CreateInnerForms(listControl);
+            _elementType = comboBox1.SelectedIndex; 
             switch (comboBox1.SelectedIndex)
             {
 
@@ -38,9 +40,8 @@ namespace WindowsFormsApplication1
                         cr.ClearBindingListLabel(_labelList, listControl);
                         cr.ClearBindingListTextBox(_textBoxList, listControl);
                         List<string> name = new List<string>();
-                        name.Add("one");
-                        name.Add("two");
-                        name.Add("three");
+                        name.Add("Capasity");
+                        name.Add("Frequency");
                         _labelList = cr.CreatingLabel(name, labelCoordinates);
                      _textBoxList = cr.CreatingTextBox(name, textBoxCoordinates);
                         break; 
@@ -50,9 +51,8 @@ namespace WindowsFormsApplication1
                         cr.ClearBindingListLabel(_labelList, listControl);
                         cr.ClearBindingListTextBox(_textBoxList, listControl);
                         List<string> name = new List<string>();
-                        name.Add("one1");
-                        name.Add("two1");
-                        name.Add("three1");
+                        name.Add("Induction");
+                        name.Add("Frequency");
                         _labelList = cr.CreatingLabel(name, labelCoordinates);
                        _textBoxList=cr.CreatingTextBox(name,textBoxCoordinates);
                         break; 
@@ -63,7 +63,7 @@ namespace WindowsFormsApplication1
                         cr.ClearBindingListLabel(_labelList, listControl);
                         cr.ClearBindingListTextBox(_textBoxList, listControl);
                         List<string> name = new List<string>();
-                        name.Add("one2");
+                        name.Add("Resistance");
                         _labelList = cr.CreatingLabel(name, labelCoordinates);
                         _textBoxList = cr.CreatingTextBox(name, textBoxCoordinates);
                         break; 
@@ -73,6 +73,15 @@ namespace WindowsFormsApplication1
             }
 
         }
+
+      private void button1_Click(object sender, EventArgs e)
+      {
+          ResistanceCalculation _resistanceCalculation = new ResistanceCalculation(_textBoxList, _elementType);
+          if (_resistanceCalculation.ResistanceCalculator() != null)
+          {
+              _iMathCount = _resistanceCalculation.ResistanceCalculator();
+          }
+      }
 
     }
 
