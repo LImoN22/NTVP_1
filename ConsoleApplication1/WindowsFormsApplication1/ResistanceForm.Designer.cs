@@ -31,16 +31,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.RemoveObject = new System.Windows.Forms.Button();
             this.AddObject = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GridView = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.RemoveObject);
             this.groupBox1.Controls.Add(this.AddObject);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.GridView);
             this.groupBox1.Location = new System.Drawing.Point(106, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(519, 416);
@@ -56,6 +56,7 @@
             this.RemoveObject.TabIndex = 2;
             this.RemoveObject.Text = "RemoveObject";
             this.RemoveObject.UseVisualStyleBackColor = true;
+            this.RemoveObject.Click += new System.EventHandler(this.RemoveObject_Click);
             // 
             // AddObject
             // 
@@ -67,14 +68,14 @@
             this.AddObject.UseVisualStyleBackColor = true;
             this.AddObject.Click += new System.EventHandler(this.AddObject_Click);
             // 
-            // dataGridView1
+            // GridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(41, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView.Location = new System.Drawing.Point(41, 33);
+            this.GridView.Name = "GridView";
+            this.GridView.Size = new System.Drawing.Size(240, 150);
+            this.GridView.TabIndex = 0;
+   
             // 
             // ResistanceForm
             // 
@@ -85,7 +86,7 @@
             this.Name = "ResistanceForm";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -95,7 +96,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button RemoveObject;
         private System.Windows.Forms.Button AddObject;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridView;
     }
 }
 

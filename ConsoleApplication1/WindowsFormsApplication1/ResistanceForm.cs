@@ -13,7 +13,7 @@ using ClassLibrary1;
 
 namespace WindowsFormsApplication1
 {
-    public partial class ResistanceForm : Form
+    public partial class ResistanceForm : Form, IAddFiguresDelegate
     {
         /// <summary>
         /// Привязка Label 
@@ -26,22 +26,50 @@ namespace WindowsFormsApplication1
         /// <summary>
         /// Создание самого списка
         /// </summary>
-        private List<MathCount> ListElement = new List<MathCount>(); 
+        private List<IMathCount> ListElement = new List<IMathCount>(); 
         public ResistanceForm()
         {
             InitializeComponent();
         }
 
-        
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       private IMathCount _figure;
+      /// <summary>
+      /// Коструктор для делигата 
+      /// </summary>
+      /// <param name="figure"></param>
+        public void DelegateInnerFunc(IMathCount figure)
         {
-
+            _figure = figure;
         }
-
-        private void AddObject_Click(object sender, EventArgs e)
+   
+       private void AddObject_Click(object sender, EventArgs e)
         {
             AddElementForm AddForm = new AddElementForm();
            AddForm.ShowDialog(); 
+        }
+        /// <summary>
+        /// запись в грид
+        /// </summary>
+        private void WriteInGrid()
+        {
+            GridView.Rows.Clear();
+            foreach ( var figure in ListElement)
+            {
+                GridView.Rows.Add(figure.ElementType, figure.ResistanceCalculation);
+            }
+        }
+
+        private void RemoveObject_Click(object sender, EventArgs e)
+        {
+            if (GridView.CurrentRow != null)
+            {
+                try
+                {
+                    ListElement.RemoveAt(GridView.CurrentRow.Index);
+                    GridView.Rows.Remove(GridView.CurrentRow);
+                }
+                catch (System.InvalidOperationException) { }
+            }
         }
     }
 }

@@ -55,6 +55,7 @@
       <DependentUpon>AddElementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateInnerForms.cs" />
+    <Compile Include="IAddFiguresDelegate.cs" />
     <Compile Include="InspectionParametrs.cs" />
     <Compile Include="ResistanceCalculation.cs" />
     <Compile Include="ResistanceForm.cs">

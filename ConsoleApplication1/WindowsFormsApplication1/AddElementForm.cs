@@ -26,7 +26,8 @@ namespace WindowsFormsApplication1
      private Point labelCoordinates = new Point(10, 50);
      private BindingList<Label> _labelList = new BindingList<Label>();
      private int _elementType;
-     private IMathCount _iMathCount = null; 
+     private IMathCount _iMathCount = null;
+     public IAddFiguresDelegate Delegate { get; set; }
       private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
        
@@ -80,7 +81,13 @@ namespace WindowsFormsApplication1
           if (_resistanceCalculation.ResistanceCalculator() != null)
           {
               _iMathCount = _resistanceCalculation.ResistanceCalculator();
+             
           }
+      }
+
+      private void button2_Click(object sender, EventArgs e)
+      {
+
       }
 
     }
