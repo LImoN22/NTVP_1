@@ -32,6 +32,8 @@
             this.RemoveObject = new System.Windows.Forms.Button();
             this.AddObject = new System.Windows.Forms.Button();
             this.GridView = new System.Windows.Forms.DataGridView();
+            this.TypeFigure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResultValues = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
             this.SuspendLayout();
@@ -71,11 +73,23 @@
             // GridView
             // 
             this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TypeFigure,
+            this.ResultValues});
             this.GridView.Location = new System.Drawing.Point(41, 33);
             this.GridView.Name = "GridView";
             this.GridView.Size = new System.Drawing.Size(240, 150);
             this.GridView.TabIndex = 0;
-   
+            // 
+            // TypeFigure
+            // 
+            this.TypeFigure.HeaderText = "TypeFigure";
+            this.TypeFigure.Name = "TypeFigure";
+            // 
+            // ResultValues
+            // 
+            this.ResultValues.HeaderText = "ResultValues";
+            this.ResultValues.Name = "ResultValues";
             // 
             // ResistanceForm
             // 
@@ -97,6 +111,8 @@
         private System.Windows.Forms.Button RemoveObject;
         private System.Windows.Forms.Button AddObject;
         private System.Windows.Forms.DataGridView GridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeFigure;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ResultValues;
     }
 }
 

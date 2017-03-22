@@ -78,16 +78,16 @@ namespace WindowsFormsApplication1
       private void button1_Click(object sender, EventArgs e)
       {
           ResistanceCalculation _resistanceCalculation = new ResistanceCalculation(_textBoxList, _elementType);
-          if (_resistanceCalculation.ResistanceCalculator() != null)
+          _iMathCount = _resistanceCalculation.ResistanceCalculator();
+          if (_iMathCount != null)
           {
-              _iMathCount = _resistanceCalculation.ResistanceCalculator();
-             
+              Delegate.DelegateInnerFunc(_iMathCount);
           }
       }
 
       private void button2_Click(object sender, EventArgs e)
       {
-
+          Close();
       }
 
     }

@@ -45,7 +45,19 @@ namespace WindowsFormsApplication1
        private void AddObject_Click(object sender, EventArgs e)
         {
             AddElementForm AddForm = new AddElementForm();
+            AddForm.Delegate = this;
+            AddForm.Closed += (obj, arg) =>
+                {
+                    if (_figure != null)
+                    {
+                        ListElement.Add(_figure);
+                        _figure = null;
+                    }
+                    WriteInGrid(); // запись в грид
+                };
+
            AddForm.ShowDialog(); 
+
         }
         /// <summary>
         /// запись в грид

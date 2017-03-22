@@ -25,11 +25,13 @@ namespace WindowsFormsApplication1
             try
             {
                 int i = 0;
-                double[] parametrs = null;
+                double[] parametrs = new double[3];
                 foreach (var textbox in _textBoxList)
                 {
-                    i++;
+                    
+                    //InspectionParametrs.Parametr(textbox.Text, textbox.Name);
                     parametrs[i] = InspectionParametrs.Parametr(textbox.Text, textbox.Name);
+                    i++;
                 }
 
 
@@ -63,6 +65,7 @@ namespace WindowsFormsApplication1
                         }
                     default: break;
                 }
+                parametrs=null;
                 return _iMathCount;
             }
             catch (Exception) { return null; }
